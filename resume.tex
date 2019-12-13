@@ -1,0 +1,180 @@
+%! TEX program = xelatex
+\documentclass[10pt]{article}
+
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{fontspec}
+\usepackage{xifthen}
+\usepackage{multirow}
+\usepackage{xcolor}
+\usepackage[none]{hyphenat}
+\usepackage{fontawesome}
+
+\usepackage[hidelinks]{hyperref}
+\urlstyle{same} % style hyperlinks like regular text
+
+\pagestyle{empty}
+\geometry{margin=0.5in}
+\setlength\parindent{0pt}
+\setlist{nosep}
+\setmainfont{Roboto Light}
+\setlength{\arrayrulewidth}{1.5pt}
+\setlength{\tabcolsep}{10pt}
+
+\newfontfamily\roboto{Roboto}
+\newcommand{\lmr}[1]{{\fontfamily{lmr}\selectfont#1}}
+
+\newcommand{\name}[2]{
+  \begin{minipage}{0.4\textwidth}
+    \begin{flushright}
+      \setlength{\tabcolsep}{0pt}
+      \begin{tabular}{r}
+        \fontsize{36pt}{0pt}\selectfont
+        \MakeUppercase{#1 \textbf{#2}} \\
+        \normalsize \, \textit{Software Developer} \,
+      \end{tabular}
+    \end{flushright}
+  \end{minipage}
+}
+
+\newcommand{\textlbf}[1]{{\roboto #1}}
+\renewcommand{\date}[2]{#1 \textlbf{#2}}
+\newcommand{\daterange}[2]{#1 -- \ifthenelse{\equal{#2}{}}{\textit{Present}}{#2}}
+\newcommand{\resumesection}[1]{\vspace{-0.2cm}\section*{#1}\vspace{-0.2cm}\vspace{0.1cm}}
+\newcommand{\heading}[2]{\textbf{#1} \\ \textit{#2}}
+
+\begin{document}
+
+{
+\setlength{\tabcolsep}{20pt}
+\begin{center}
+  \begin{tabular}{c | c}
+% \name is self-explanatory. \topinfo is for things like social media, email, phone number, address, etc.
+  \name{Benjamin}{Li} & \begin{minipage}{0.4\textwidth}
+    \vspace{6pt}
+    \href{mailto:liben002@bu.edu}{liben002@bu.edu} \\
+    \url{https://github.com/liben002} \\
+    {phone number} \\
+    {address}
+    \vspace{6pt}
+  \end{minipage}
+\end{tabular}
+\end{center}
+}
+
+\vspace{0.5cm}
+
+\begin{minipage}[t]{0.25\textwidth}
+  \begin{flushleft}
+    \resumesection{Education}
+    \textbf{Boston University} \newline
+    \textit{B.S. in Computer Engineering} \newline
+    \textlbf{GPA:} 3.84 \newline
+    Dean's List. \newline
+    \daterange{\date{Sep}{2018}}{\date{May}{2022}} \textit{\color{gray}{(exp.)}}
+
+    \vspace{0.25cm}
+
+    \textbf{Boston Latin School} \newline
+    \textlbf{GPA:} 4.02 \newline
+    \daterange{\date{Sep}{2012}}{\date{May}{2018}}
+
+    \resumesection{Skills}
+    \textbf{Languages} \newline
+    C/C++ \newline
+    Java \newline
+    Python \newline
+    Verilog \newline
+    HTML + CSS \newline
+    Matlab \newline
+    R \newline
+
+    \vspace{0.25cm}
+
+    \textbf{Technologies} \newline
+    Hardware \newline
+    Android Studio \newline
+    Linux \newline
+    Git \newline
+    Jira \newline
+    ServiceNow
+
+    \resumesection{Awards}
+    \textbf{Hack the Heights} \newline
+    First Place \newline
+    \date{Apr 14}{2019}
+
+    \vspace{0.25cm}
+
+    \textbf{Codestellation} \newline
+    First Place Judges Pick \newline
+    \date{Nov 10}{2019}
+  \end{flushleft}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.7\textwidth}
+  \begin{flushleft}
+
+  \resumesection{Experience}
+  \textbf{Rocket Software} \hfill \textbf{Waltham, MA} \newline
+  \textit{Software Engineering Intern} \hfill \daterange{\date{Jun}{2019}}{}
+  \begin{itemize}
+    \item Modernized an IBM Zowe (Open Source Mainframe OS) data recovery service to use the Java Spring Framework instead of servlets for use with REST API.
+    \item Implemented automation testing for multiple DB2 dev-ops administrative experiences using Pytest
+    \item Fixed bugs in the service handler backend for HTTP requests.
+  \end{itemize}
+
+  \vspace{0.25cm}
+
+  \textbf{Partners Healthcare} \hfill \textbf{Boston, MA} \newline
+  \textit{ITSM Intern} \hfill \daterange{\date{June}{2018}}{\date{August}{2018}}
+  \begin{itemize}
+    \item Wrote client and server-side scripts in JavaScript to be used by the ITSM team for ServiceNow maintenance.
+    \item Managed incoming ticket queue for all priorities.
+  \end{itemize}
+
+  \vspace{0.25cm}
+
+  \textbf{State Street Corporation} \hfill \textbf{Boston, MA} \newline
+  \textit{Internal Audit Intern} \hfill \daterange{\date{Jul}{2017}}{\date{Aug}{2017}}
+  \begin{itemize}
+    \item Automated the conversion of internal audit documents using Selenium and Python for use in a new cloud storage service.
+    \item Wrote Visual Basic scripts for the Internal Audit team to help accelerate their general usage of Microsoft Excel.
+  \end{itemize}
+
+ \resumesection{Extracurriculars}
+  \textbf{Boston University High Performance Computing Club} \hfill \textbf{Boston, MA} \newline
+  \textit{Executive Board Member} \hfill \daterange{\date{Sep}{2018}}{}
+  \begin{itemize}
+    \item Made presentations and example code (in Python, C++) for use in workshop events to teach members about techniques used in High Performance Computing.
+  \end{itemize}
+
+  \vspace{0.25cm}
+
+  \textbf{Boston Latin School} \hfill \textbf{Boston, MA} \newline
+  \textit{Technology Volunteer} \hfill \daterange{\date{Sep}{2017}}{}
+  \begin{itemize}
+    \item General IT duties including repairing computers and troubleshooting software.
+  \end{itemize}
+  
+  \resumesection{Projects}
+  
+  \textbf{WikiWhere} \hfill \href{https://wikiwhere.org/}{\faLink \, \textit{https://wikiwhere.org/}} \quad \href{https://github.com/wikiwhere/wikiwhere}{\faGithub \, \textit{wikiwhere/wikiwhere}} \newline
+  WikiWhere is a visualization of the connectivity between Wikipedia articles. It computes and displays the shortest path from one article to the article based on links in the page. The backend implements a double ended Breadth-First Search on a SQL database of article metadata using C++, and then passes the information to the frontend, which is built with the D3 Javascript framework.
+
+  \vspace{0.25cm}
+
+  \textbf{Comotium} \hfill \href{https://github.com/comotium}{\faGithub \, \textit{Comotium}} \newline
+  Comotium is an app which provides a hands-off form filling service that allows people of low-income or illiteracy to use their voice to submit important documents. These documents can be taxes, employment papers, citizenship forms, etc. Questions on the form are asked to the user, who then responds with speech which is finally converted to text using an API. It is then placed onto the specific form using an image map.
+
+  \vspace{0.25cm}
+
+  \textbf{hackm.app} \hfill \href{https://hackm.app/}{\faLink \, \textit{https://hackm.app/}} \quad \href{https://github.com/hackmapp/hackmapp}{\faGithub \, \textit{hackmapp/hackmapp}} \newline
+  hackm.app is a web app that contains an interactive visualization of the current, upcoming, and previous MLH hackathons for the current year. In the background is a webscraper built with Python and BeautifulSoup that extracts data from the MLH website. The data is then processed and served to a website frontend built with D3.
+
+
+
+  \end{flushleft}
+\end{minipage}
+
+\end{document}
